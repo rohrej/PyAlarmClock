@@ -4,6 +4,8 @@ import os
 import multiprocessing as mp
 #import time
 import pygame
+from pygame.locals import *
+
 #from time import localtime
 from datetime import datetime
 
@@ -86,7 +88,7 @@ while 1:
     except mp.queues.Empty :
         pass
     if (newTouch) :
-        print newTouch
+        print (newTouch)
     
     newTime = None
     try :
