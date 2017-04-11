@@ -85,7 +85,8 @@ while 1:
         newTouch = touchQ.get_nowait()
     except mp.queues.Empty :
         pass
-    #if (newTouch) :
+    if (newTouch) :
+        print newTouch
     
     newTime = None
     try :
