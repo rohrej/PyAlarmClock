@@ -28,7 +28,7 @@ class clock :
         pygame.mouse.set_visible(False)
 
         #self.font = pygame.font.Font('segoeui.ttf', 126)
-        self.font = pygame.font.Font('segoeui.ttf', 196)
+        self.font = pygame.font.Font('segoeui.ttf', 195)
         self.dateFont = pygame.font.Font('segoeui.ttf', 36)
 
         os.putenv('SDL_MOUSEDRV', 'TSLIB')
@@ -51,7 +51,7 @@ class clock :
     
     def run(self) :
         touchQ = mp.Queue()
-        touchT = mp.Process(target=touch, args=(touchQ,))
+        touchT = mp.Process(target=self.touch, args=(touchQ,))
         touchT.start()
         tq = mp.Queue()
         tk = timekeeper(tq)
@@ -130,7 +130,7 @@ class clock :
                 date_surface = self.dateFont.render(currentDate, True, color)
                 date_surface_shadow = self.dateFont.render(currentDate, True, s_color)
         
-                self.screen.scr.fill(b_color)
+                self.screen.scr.fill(self.b_color)
                 self.screen.scr.blit(time_surface_shadow, (8, 26))
                 self.screen.scr.blit(time_surface, (4, 22))
                 self.screen.scr.blit(colon_surface_shadow, (227, 26))
