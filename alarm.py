@@ -66,7 +66,7 @@ class alarm(Process) :
             pygame.mixer.music.set_volume(vol)
             playtime = datetime.today()
             if ((playtime - local_time) > timedelta(minutes = self.alarm_length)):
-                mygame.mixer.music.stop()
+                pygame.mixer.music.stop()
                 self.updates.put("")
                 break
 

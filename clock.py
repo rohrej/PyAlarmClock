@@ -29,7 +29,7 @@ class clock :
         pygame.mouse.set_visible(False)
 
         #self.font = pygame.font.Font('segoeui.ttf', 126)
-        self.font = pygame.font.Font(self.default_font, 192)
+        self.font = pygame.font.Font(self.default_font, 190)
         self.dateFont = pygame.font.Font(self.default_font, 36)
 
         os.putenv('SDL_MOUSEDRV', 'TSLIB')
