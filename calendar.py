@@ -12,7 +12,8 @@ class calendar(Process) :
         lastTime = ""
         while True :
             local_time = localtime()
-            current = strftime("%A, %B %d, %Y", local_time)
+            #current = strftime("%A, %B %d, %Y", local_time)
+            current = strftime("%a, %d %b %Y, %Z", local_time)
             if(lastTime != current):
                 #print (current)
                 self.updates.put(current)
